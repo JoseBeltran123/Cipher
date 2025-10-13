@@ -1,63 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <title>Cipher</title>
-    <script type="module" src="js/registro.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Cipher Escape Rooms</title>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <img src="" alt="Logotipo de Cipher">
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Escape Rooms</a>
-            <a href="#">¿Quienes Somos?</a>
-            <a href="#">Galería</a>
-        </nav>
+        <div class="header-container">
+            <img src="img/logo-cipher.png" alt="Logotipo de Cipher" class="logo">
+            <nav class="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#escape-rooms">Escape Rooms</a>
+                <a href="#quienes-somos">¿Quiénes Somos?</a>
+                <a href="#galeria">Galería</a>
+            </nav>
+        </div>
     </header>
-    <div class="contenedor">
+
+    <!-- Sección Principal -->
+    <section class="contenedor" id="inicio">
         <h1>bienvenido</h1>
         <div class="text-principio">
-            <p>preparate para vivir una aventura llena de misterio y emocion. ¡desafía tu mente y escapa ya!<p>
+            <p>preparate para vivir una aventura llena de misterio y emocion. ¡desafia tu mente y escapa ya!</p>
         </div>
         <div class="boton_principio">
-            <a href="#">Experiencias</a>
+            <a href="#escape-rooms">Experiencias</a>
         </div>
+    </section>
+    
+    <!-- Popup de reserva -->
+    <div class="popup" id="popup">
+        <div class="top">
+            <h1>reserva</h1>
+            <i class="fa-solid fa-xmark" id="close"></i>
+        </div>
+        <form id="formulario">
+            <select name="room" id="room" title="room">
+                <option value="">Seleccionar Sala</option>
+                <option value="" id="5">Oficina 13</option>
+                <option value="" id="6">Biohazard</option>
+                <option value="" id="7">Cronos</option>
+                <option value="" id="8">Vhs</option>
+            </select>
+            <input type="datetime-local" name="fecha" id="fecha">
+            <input type="text" placeholder="Ingresa nombre" id="nom">
+            <input type="number" placeholder="Ingresa número de celular" id="cel">
+            <input type="submit" value="Reservar" id="res">
+        </form>
     </div>
 
-    <div class="contenedos_Cuartos">
+
+    <!-- Sección Escape Rooms -->
+    <section class="contenedos_Cuartos" id="escape-rooms">
         <h1 class="titulo">escape rooms</h1>
-        <div class="cuarto1" id="1">
-            <h1>OFICINA 13</h1>
+        <div class="rooms-grid">
+            <div class="cuarto cuarto1" id="1">
+                <h1>oficina 13</h1>
+                <button class="btnPopup">Reservar</button>
+            </div>
+            
+            <div class="cuarto cuarto2" id="2">
+                <h1>biohazard</h1>
+                <button class="btnPopup">Reservar</button>
+            </div>
+
+            </div>
         </div>
+    </section>
+
+<section class="contenedos_Cuartos" id="escape-rooms">
+        <div class="rooms-grid">
+    
+            <div class="cuarto cuarto3" id="3">
+                <h1>cronos</h1>
+                <button class="btnPopup">Reservar</button>
+            </div>
+
+            <div class="cuarto cuarto4" id="4">
+                <h1>vhs</h1>
+                <button class="btnPopup">Reservar</button>
+            </div>
+        </div>
+    </section>
+    <!-- Sección Quiénes Somos -->
+    <section class="quienes-somos" id="quienes-somos">
+        <h1>¿quienes somos?</h1>
         
-        <div class="cuarto2" id="2">
-            <h1>BIOHAZARD</h1>
-        </div>
+        <div class="features-container">
+            <div class="box">
+                <div class="icon">
+                    <img src="img/Sin título.png" alt="Icono de grupo">
+                </div>
+                <p>Nuestros juegos están pensados para cualquier tipo de grupo: amigos, familia, parejas o equipos de trabajo.</p>
+            </div>
 
-        <div class="cuarto3" id="3">
-            <h1>CRONOS</h1>
-        </div>
+            <div class="box">
+                <div class="icon">
+                    <img src="img/icons8-room-100.png" alt="Icono de sala">
+                </div>
+                <p>Cada sala cuenta una historia distinta. Desde los escenarios hasta los acertijos, todo fue diseñado para sumergirte dentro de una película.</p>
+            </div>
 
-        <div class="cuarto4" id="4">
-            <h1>VHS</h1>
+            <div class="box">
+                <div class="icon">
+                    <img src="img/Roomwithaview_icon.png" alt="Icono de vista">
+                </div>
+                <p>Somos una de las primeras escape rooms en Ciudad Juárez.</p>
+            </div>
         </div>
-    </div>
-    <div class="Contenedor_nosotros">
-        <div class="noson">
-            <img src="" alt="">
-            <p>Nuestros juegos están pensados para cualquier tipo de grupo: amigos, familias, parejas o equipos de trabajo. </p>
+ 
+        <div class="texto-final">
+           <div class="imagen">
+                <img src="img/Component 2(1).png" alt="Logo Cipher">
+            </div>
+            <div class="texto-final2"> <p>Somos CIPHER, un espacio creado para desafiar tu mente, poner a prueba tu ingenio y vivir una experiencia diferente en Ciudad Juárez. 
+            Queremos que cada jugador se sienta dentro de una misión cinematográfica, con una combinación de suspenso, lógica y la adrenalina de escapar a tiempo.</p>
+            <br>
+            <p>Sabemos que en nuestra ciudad los escape rooms son aún nuevos, por eso buscamos ofrecer una experiencia que combine inmersión, narrativa y diversión. 
+            Desde jugadores primerizos hasta los más experimentados.</p></div>
+        
         </div>
-        <div class="noson">
-            <img src="" alt="">
-            <p>Cada sala cuenta una historia distinta. Desde los escenarios hasta el sonido y la ambientación, todo está diseñado para que te sientas dentro de una película.</p>
+    </section>
+
+    <!-- Sección Galería -->
+    <section class="galeria" id="galeria">
+        <h1>galeria</h1>
+        <div class="carrusel-container">
+            <div class="carrusel">
+                <div class="imagenes" id="imagenes">
+                    <img src="img/Group 164(1).png" alt="Sala 1">
+                    <img src="img/Group 167(1).png" alt="Sala 2">
+                    <img src="img/Group 169(1).png" alt="Sala 3">
+                    <img src="img/Group 164(1).png" alt="Sala 4">
+                    <img src="img/Group 167(1).png" alt="Sala 5">
+                    <img src="img/Group 169(1).png" alt="Sala 6">
+                </div>
+            </div>
+            
+            <div class="controles">
+                <div class="boton" id="prev">⟵</div>
+                <div class="boton" id="next">⟶</div>
+            </div>
+            
+            <div class="indicadores" id="indicadores">
+                <!-- Los indicadores se generan automáticamente con JavaScript -->
+            </div>
         </div>
-        <div class="noson">
-            <p>Somos uno de los primeros escape rooms en Ciudad Juárez. </p>
-        </div>
-    </div>
+    </section>
+    <script src="js/popup.js"></script>
+    <script type="module" src="js/registro.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagenes = document.getElementById('imagenes');
+            const totalImagenes = imagenes.children.length;
+            const imagenesPorGrupo = 3;
+            const totalGrupos = Math.ceil(totalImagenes / imagenesPorGrupo);
+            let grupoActual = 0;
+
+            // Crear indicadores
+            const indicadoresContainer = document.getElementById('indicadores');
+            for (let i = 0; i < totalGrupos; i++) {
+                const indicador = document.createElement('div');
+                indicador.className = 'indicador' + (i === 0 ? ' activo' : '');
+                indicador.addEventListener('click', () => {
+                    grupoActual = i;
+                    actualizarCarrusel();
+                    actualizarIndicadores();
+                });
+                indicadoresContainer.appendChild(indicador);
+            }
+
+            // Función para actualizar el carrusel
+            function actualizarCarrusel() {
+                const anchoContenedor = imagenes.parentElement.clientWidth;
+                const desplazamiento = grupoActual * anchoContenedor;
+                imagenes.style.transform = `translateX(-${desplazamiento}px)`;
+            }
+
+            // Función para actualizar indicadores
+            function actualizarIndicadores() {
+                const indicadores = document.querySelectorAll('.indicador');
+                indicadores.forEach((ind, index) => {
+                    ind.classList.toggle('activo', index === grupoActual);
+                });
+            }
+
+            // Eventos para los botones
+            document.getElementById('next').addEventListener('click', () => {
+                grupoActual = (grupoActual + 1) % totalGrupos;
+                actualizarCarrusel();
+                actualizarIndicadores();
+            });
+
+            document.getElementById('prev').addEventListener('click', () => {
+                grupoActual = (grupoActual - 1 + totalGrupos) % totalGrupos;
+                actualizarCarrusel();
+                actualizarIndicadores();
+            });
+
+            // Ajuste automático al cambiar tamaño de ventana
+            window.addEventListener('resize', actualizarCarrusel);
+            
+            // Inicializar carrusel
+            actualizarCarrusel();
+        });
+    </script>
+
 </body>
 </html>

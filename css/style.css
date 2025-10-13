@@ -2,136 +2,545 @@
     font-family: 'Plane';
     src: url('../fonts/PlaneCrash.ttf');
 }
-@property --ColorPrincipal{
-    syntax: "<color>";
-    inherits: true;
-    initial-value:#0C0C0B;
+
+:root {
+    --ColorPrincipal: #0C0C0B;
+    --botones: #FDD300;
+    --texto: #FFFFFF;
+    --borde: #A30000;
 }
-@property --botones{
-    syntax: "<color>";
-    inherits: true;
-    initial-value:#FDD300;
-}
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     background-color: var(--ColorPrincipal);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
-header{
+
+/* Header */
+header {
     width: 100%;
-    height: 80%;
     background: #141312;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 3px solid #A30000;
+    padding: 15px 20px;
+    border-bottom: 3px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-nav{
-    margin-top: 10%;
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+nav {
     width: 100%;
-    text-align: center;
-    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-nav a{
-    margin: 10px;
+
+nav a {
+    margin: 5px 10px;
     text-decoration: none;
-    color: #FDD300;
+    color: var(--botones);
     text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
 }
-.contenedor{
+
+nav a:hover {
+    color: white;
+}
+
+/* Sección principal */
+.contenedor {
     width: 100%;
-    height: 80vh;
-    background-image: url("../img/portada.png");
+    min-height: 80vh;
+    background-image: url("https://compostela.eskapark.com/assets/img/samples/head_escaperoom.jpg");
     background-position: center;
-    background-size: 220% 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
     position: relative;
 }
-.contenedor h1{
-    font-family: Plane;
-    color: white;
-    font-weight: normal;
-    font-size: 2.5em;
-    margin-top: 0px;
-}
-.text-principio{
-    width: 280px;
-    margin-top: 10%;
-    display: inline-block;
-    font-family: plane;
-    color: white;
-    font-size: 13px;
-}
-.boton_principio{
-    width: 150px;
-    padding: 17px;
-      position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    background-color: var(--botones);
-    align-items: center;
-    justify-content: center;
 
+.contenedor h1 {
+    font-family: 'Plane', sans-serif;
+    font-weight: normal;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
-.boton_principio a{
+
+.text-principio {
+    max-width: 280px;
+    font-family: 'Plane', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.boton_principio {
+    padding: 15px 30px;
+    background-color: var(--botones);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton_principio a {
     text-decoration: none;
     color: var(--ColorPrincipal);
+    font-weight: bold;
+    text-transform: uppercase;
 }
-.contenedos_Cuartos{
+
+.boton_principio:hover {
+    background-color: #ffdf40;
+}
+
+/* popup */
+.popup{
+    width: 50vw;
+    height: 80vh;
+    position: fixed;
+    top: 15%;
+    left: 25%;
+    background: #181715;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.438);
     text-align: center;
+    visibility: hidden;
+}
+.top{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top h1{
+    font-family: 'Plane', sans-serif;
+    font-weight: normal;
+    margin: 0;
+}
+.top i{
+    font-size: 2.4em;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+.popup form{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.popup form select{
+    width: 60%;
+    padding: 1%;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
     color: white;
-    margin: 10px;
-    font-family: Crafter Signature Serif;
-    font-weight: 900;
-    font-style: Regular;
+}
+.popup form select option{
+    background: #202020;
+}
+.popup form input{
+    width: 60%;
+    padding: 1%;
+    margin-top: 7%;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 2px solid white;
+    color: white;
+}
+.popup form #res{
+    background: var(--botones);
+    color: black;
+    font-weight: bold;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.popup form #res:hover{
+    background: #ffdf40;
+}
+.contenedos_Cuartos {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contenedos_Cuartos .titulo {
+    font-family: 'Plane', sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.rooms-grid {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem;
+    width: 100%;
+    max-width: 1200px;
+}
 
 
+.cuarto {
+    width: 100%;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.cuarto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.cuarto:hover {
+    transform: translateY(-5px);
+}
+
+.cuarto h1 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    font-family: 'Plane', sans-serif;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    color: white;
+}
+.cuarto button{
+    width: 40%;
+    height: 20%;
+    background: var(--botones);
+    outline: none;
+    border: none;
+    z-index: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.cuarto button:hover {
+    background-color: #ffdf40;
+}
+
+.cuarto1 {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    background-image: url(https://interpretaciondelossuenos.com/wp-content/uploads/2022/04/escape-room-1.jpg);
+}
+
+.cuarto2 {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    background-image: url("../img/DiningArea-MainHouse1F-RE7.png");
+}
+
+.cuarto3 {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    background-image: url(https://blogs.eltiempo.com/sabias-que/wp-content/uploads/sites/791/2018/12/Ambientaci%C3%B3n-Escape-Room-1024x684.jpg);
+}
+
+.cuarto4 {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    background-image: url(https://interpretaciondelossuenos.com/wp-content/uploads/2022/04/escape-room-1.jpg);
+}
+
+/* Sección Quiénes Somos */
+.quienes-somos {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.quienes-somos h1 {
+    font-family: 'Plane', sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+
+}
+
+.box {
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.icon {
+    margin-bottom: 15px;
+}
+
+.icon img {
+    width: 70px;
+    height: auto;
+}
+
+.texto-final2 {
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    width:100% ;
+    margin-left: 4%;
     
 }
-.contenedos_Cuartos .titulo{
-    font-family: plane;
+.texto-final {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6;
+    width: 40%;
+    margin-left: 35%;
+    margin-top: 3%;
+}
+
+.imagen {
+  width: 10px;
+}
+
+.imagen img {
+float: left;
+
+}
+
+/* Galería - Carrusel de 3 imágenes */
+.galeria {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.galeria h1 {
+    font-family: 'Plane', sans-serif;
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.carrusel-container {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrusel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.imagenes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* 3 grupos de imágenes (100% cada grupo) */
+}
+
+.imagenes img {
+    width: calc(100% / 3); /* Cada imagen ocupa 1/3 del ancho del contenedor */
+    flex-shrink: 0;
+    border: 3px solid var(--botones);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--botones);
+    color: var(--botones);
+    font-size: 24px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.boton:hover {
+    background-color: var(--botones);
+    color: var(--ColorPrincipal);
+}
+
+/* Indicadores del carrusel */
+.indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicador.activo {
+    background-color: var(--botones);
+}
+
+/* Media Queries para tablets */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    nav {
+        width: auto;
+        justify-content: flex-end;
+    }
+    
+    nav a {
+        font-size: 1rem;
+    }
+    
+    .contenedor {
+        min-height: 90vh;
+    }
+    
+    .contenedor h1 {
+        font-size: 3.5rem;
+    }
+    
+    .text-principio {
+        max-width: 500px;
+        font-size: 1.2rem;
+    }
+    
+    .rooms-grid {
+    }
+    
+    .features-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .texto-final {
+        font-size: 1.1rem;
+    }
+    
+    /* Carrusel en tablets */
+    .imagenes img {
+        width: calc(100% / 3);
+    }
 }
-.cuarto1{
-    background-image: url(../img/Cuarto1.png);
-    width: 100%;
-    height: 280px;
-    background-size: 100% 100%;
+
+/* Media Queries para desktop */
+@media (min-width: 1024px) {
+    .rooms-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .contenedor h1 {
+        font-size: 4rem;
+    }
+    
+    .text-principio {
+        max-width: 600px;
+        font-size: 1.3rem;
+    }
+    
+    .imagen img {
+        max-width: 200px;
+    }
+    
+    /* Carrusel en desktop */
+    .imagenes img {
+        width: calc(100% / 3);
+    }
 }
-.cuarto1 h1{
-    position: relative;
-    top: 130px;
-}
-.cuarto2{
-    background-image: url(../img/cuarto2.png);
-    width: 100%;
-    height: 280px;
-    background-size: 100% 100%;
-}
-.cuarto2 h1{
-    position: relative;
-    top: 130px;
-}
-.cuarto3{
-    background-image: url(../img/cuarto3.png);
-    width: 100%;
-    height: 280px;
-    background-size: 100% 100%;
-}
-.cuarto3 h1{
-    position: relative;
-    top: 130px;
-}
-.cuarto4{
-    background-image: url(../img/Cuarto4.png);
-    width: 100%;
-    height: 280px;
-    background-size: 100% 100%;
-}
-.cuarto4 h1{
-    position: relative;
-    top: 130px;
+
+/* Para móviles pequeños */
+@media (max-width: 480px) {
+    .imagenes img {
+        width: calc(100% / 3);
+    }
 }
