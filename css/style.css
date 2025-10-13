@@ -7,6 +7,11 @@
     inherits: true;
     initial-value:#0C0C0B;
 }
+@property --botones{
+    syntax: "<color>";
+    inherits: true;
+    initial-value:#FDD300;
+}
 *{
     padding: 0;
     margin: 0;
@@ -42,10 +47,91 @@ nav a{
     background-position: center;
     background-size: 220% 100%;
     text-align: center;
+    position: relative;
 }
 .contenedor h1{
     font-family: Plane;
     color: white;
     font-weight: normal;
     font-size: 2.5em;
+    margin-top: 0px;
+}
+.text-principio{
+    width: 280px;
+    margin-top: 10%;
+    display: inline-block;
+    font-family: plane;
+    color: white;
+    font-size: 13px;
+}
+.boton_principio{
+    width: 150px;
+    padding: 17px;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    background-color: var(--botones);
+    align-items: center;
+    justify-content: center;
+
+}
+.boton_principio a{
+    text-decoration: none;
+    color: var(--ColorPrincipal);
+}
+.contenedos_Cuartos{
+    text-align: center;
+    color: white;
+    margin: 10px;
+    font-family: Crafter Signature Serif;
+    font-weight: 900;
+    font-style: Regular;
+
+
+    
+}
+.contenedos_Cuartos .titulo{
+    font-family: plane;
+    
+}
+.cuarto1{
+    background-image: url(../img/Cuarto1.png);
+    width: 100%;
+    height: 280px;
+    background-size: 100% 100%;
+}
+.cuarto1 h1{
+    position: relative;
+    top: 130px;
+}
+.cuarto2{
+    background-image: url(../img/cuarto2.png);
+    width: 100%;
+    height: 280px;
+    background-size: 100% 100%;
+}
+.cuarto2 h1{
+    position: relative;
+    top: 130px;
+}
+.cuarto3{
+    background-image: url(../img/cuarto3.png);
+    width: 100%;
+    height: 280px;
+    background-size: 100% 100%;
+}
+.cuarto3 h1{
+    position: relative;
+    top: 130px;
+}
+.cuarto4{
+    background-image: url(../img/Cuarto4.png);
+    width: 100%;
+    height: 280px;
+    background-size: 100% 100%;
+}
+.cuarto4 h1{
+    position: relative;
+    top: 130px;
 }
