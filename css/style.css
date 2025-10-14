@@ -1025,9 +1025,22 @@ footer img {
 
 /* Media Queries para desktop */
 @media (min-width: 1024px) {
-
+    header{
+        padding: 0;
+    }
+    .header-container{
+        width: 100%;
+        flex-direction: row;
+        justify-content: start;
+        padding: 10px;
+    }
+    .logos{
+        width: 25%;
+        justify-content: start;
+    }
     nav a{
         font-size: 1em;
+        margin: 5%;
     }
     /* popup */
     .popup {
