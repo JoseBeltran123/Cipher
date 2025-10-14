@@ -1264,12 +1264,11 @@ footer img {
     }
 
     .imagen {
-        width: 10px;
+        width: 40%;
     }
 
     .imagen img {
         float: left;
-
     }
 
     /* Galería - Carrusel de 3 imágenes */
