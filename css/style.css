@@ -1026,6 +1026,9 @@ footer img {
 /* Media Queries para desktop */
 @media (min-width: 1024px) {
 
+    nav a{
+        font-size: 1em;
+    }
     /* popup */
     .popup {
         width: 50vw;
