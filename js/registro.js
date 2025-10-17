@@ -31,6 +31,7 @@ async function agregarApartado(idSala, nombre, fecha, celular) {
         });
         alert("Reserva agendada exitosamente");
         document.getElementById("popup").style.visibility = "hidden";
+        document.body.style.overflow = "auto";
         formulario.reset();
         console.log("Documento escrito con ID: ", docRef.id);
     } catch (e) {
